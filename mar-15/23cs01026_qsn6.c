@@ -23,16 +23,19 @@ int main() {
 
     printf("Enter the length of first string: ");
     scanf("%d", &len1);
+    getchar();
     char *str1 = (char *)malloc((len1 + 1) * sizeof(char));
     if (str1 == NULL) {
         printf("Memory allocation failed.\n");
         return 1;
     }
     printf("Enter the string: ");
-    scanf("%s", str1);
+    scanf("%[^\n]", str1);
+    getchar();
 
     printf("Enter the length of second string: ");
     scanf("%d", &len2);
+    getchar();
     char *str2 = (char *)malloc((len2 + 1) * sizeof(char));
     if (str2 == NULL) {
         printf("Memory allocation failed.\n");
@@ -40,7 +43,8 @@ int main() {
         return 1;
     }
     printf("Enter the string: ");
-    scanf("%s", str2);
+    scanf("%[^\n]", str2);
+    getchar();
 
     char *result = concatenateStrings(str1, str2, len1, len2);
 
