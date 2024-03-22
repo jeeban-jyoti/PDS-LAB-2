@@ -14,9 +14,6 @@ void NinetyDegree(int n, int arr1[n][n], int a)
                 int k = *(*(arr1 + i) + j);
                 *(*(arr1 + i) + j) = *(*(arr1 + n - i - 1) + j);
                 *(*(arr1 + n - i - 1) + j) = k;
-                // int k = arr1[i][j];
-                // arr1[i][j] = arr1[n-i-1][j];
-                // arr1[n-i-1][j] = k;
             }
         }
     }
