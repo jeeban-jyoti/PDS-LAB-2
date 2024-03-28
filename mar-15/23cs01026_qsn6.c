@@ -30,8 +30,7 @@ int main() {
         return 1;
     }
     printf("Enter the string: ");
-    scanf("%[^\n]", str1);
-    getchar();
+    scanf("%[^\n]s", str1);
 
     printf("Enter the length of second string: ");
     scanf("%d", &len2);
@@ -43,8 +42,7 @@ int main() {
         return 1;
     }
     printf("Enter the string: ");
-    scanf("%[^\n]", str2);
-    getchar();
+    scanf("%[^\n]s", str1);
 
     char *result = concatenateStrings(str1, str2, len1, len2);
 

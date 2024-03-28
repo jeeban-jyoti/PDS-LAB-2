@@ -13,7 +13,7 @@ int moreThanOnce(int *arr, int n) {
         }
 
         if(check == 0){
-            printf("All the numbers between [1, n] does not exist int he array!\n");
+            printf("All the numbers between [1, n] does not exist int the array!\n");
             return -1;
         }
         else if(check == 1){
@@ -24,7 +24,7 @@ int moreThanOnce(int *arr, int n) {
             ref = i;
         }
         else{
-            printf("All the numbers between [1, n] does not exist int he array!\n");
+            printf("All the numbers between [1, n] does not exist int the array!\n");
             return -1;
         }
         check = 0;
@@ -45,7 +45,7 @@ int main() {
 
     int *arr = (int *)malloc((n+1) * sizeof(int));
 
-    printf("Enter %d elements of the array:\n", n);
+    printf("Enter %d elements of the array:\n", (n+1));
     for (int i = 0; i < n+1; i++) {
         scanf("%d", &arr[i]);
     }
