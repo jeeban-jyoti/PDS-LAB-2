@@ -32,16 +32,16 @@ int main()
         printf("Employee ID : %d\n", e1.employeeID);
         printf("Employee Name : ");
         puts(e1.name);
-        printf("Hourly wage: %f", e1.ed1.wage);
+        printf("Hourly wage: %f\n", e1.ed1.wage);
         break;
     case 2:
         printf("Enter Fixed salary : ");
-        scanf("%f", &e1.ed1.salary);
+        scanf("%lf", &e1.ed1.salary);
 
         printf("Employee ID : %d\n", e1.employeeID);
         printf("Employee Name : ");
         puts(e1.name);
-        printf("Fixed salary : %f", e1.ed1.salary);
+        printf("Fixed salary : %f\n", e1.ed1.salary);
         break;
     default:
         printf("Invalid choice.Exiting application\n");

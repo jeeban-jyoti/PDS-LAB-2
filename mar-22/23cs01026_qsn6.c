@@ -7,7 +7,7 @@ typedef struct student
 {
     char name[30];
     int roll_no;
-    float pr;
+    float percentage;
 } st;
 
 st students[max_students];
@@ -22,8 +22,8 @@ void insert()
         printf("Enter your roll number : ");
         scanf("%d", &students[numstudents].roll_no);
 
-        printf("Enter your pr : ");
-        scanf("%f", &students[numstudents].pr);
+        printf("Enter your percentage : ");
+        scanf("%f", &students[numstudents].percentage);
         numstudents++;
     }
     else
@@ -39,7 +39,7 @@ void viewstudent()
         printf("\n");
         for (int i = 0; i < numstudents; i++)
         {
-            printf("%-18d: %-30s%-20d%-20.2f\n", i + 1, students[i].name, students[i].roll_no, students[i].pr);
+            printf("%-18d: %-30s%-20d%-20.2f\n", i + 1, students[i].name, students[i].roll_no, students[i].percentage);
         }
     }
     else
@@ -56,7 +56,7 @@ void sortname()
             for (int i = 0; i < size - 1; i++)
             {
                 issorted = 1;
-                if (strcmp(students[i].name, students[i + 1].name) == 1)
+                if (strcmp(students[i].name, students[i + 1].name) > 0)
                 {
                     st temp = students[i];
                     students[i] = students[i + 1];
@@ -129,17 +129,17 @@ char *findOne(const char *str)
 void specs(float *arr)
 {
     arr[0] = numstudents;
-    float max = students[0].pr, min = students[0].pr, mean = 0, stdd = 0;
+    float max = students[0].percentage, min = students[0].percentage, mean = 0, stdd = 0;
     for (int i = 0; i < numstudents; i++)
     {
-        mean += students[i].pr;
-        if (students[i].pr > max)
+        mean += students[i].percentage;
+        if (students[i].percentage > max)
         {
-            max = students[i].pr;
+            max = students[i].percentage;
         }
-        if (students[i].pr < min)
+        if (students[i].percentage < min)
         {
-            min = students[i].pr;
+            min = students[i].percentage;
         }
     }
     mean /= numstudents;
@@ -148,7 +148,7 @@ void specs(float *arr)
     arr[3] = mean;
     for (int i = 0; i < numstudents; i++)
     {
-        stdd += (students[i].pr - mean) * (students[i].pr - mean);
+        stdd += (students[i].percentage - mean) * (students[i].percentage - mean);
     }
     stdd /= numstudents;
     stdd = sqrt(stdd);

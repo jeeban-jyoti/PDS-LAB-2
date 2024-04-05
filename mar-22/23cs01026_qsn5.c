@@ -6,19 +6,19 @@ typedef struct CourseRecord
     char department[10];
     char courcecode[10];
     int marks[3];
-} cr;
-float avg(cr st)
+} course;
+float avg(course student)
 {
     float avgmarks = 0;
     for (int i = 0; i < 3; i++)
     {
-        avgmarks += st.marks[i];
+        avgmarks += student.marks[i];
     }
     return (avgmarks / 3);
 }
-int func(cr st)
+int func(course student)
 {
-    float num = avg(st);
+    float num = avg(student);
     if (num < 35)
     {
         return 0;
@@ -27,29 +27,29 @@ int func(cr st)
 }
 int main()
 {
-    cr st;
+    course student;
     printf("Enter the first name : ");
-    gets(st.firstname);
+    gets(student.firstname);
     printf("Enter the last name : ");
-    gets(st.lastname);
+    gets(student.lastname);
     printf("Enter the Department : ");
-    gets(st.department);
+    gets(student.department);
     printf("Enter the courcecode : ");
-    gets(st.courcecode);
+    gets(student.courcecode);
     printf("Enter the marks of 3 subjects : ");
     for (int i = 0; i < 3; i++)
     {
-        scanf("%d", &st.marks[i]);
+        scanf("%d", &student.marks[i]);
     }
-    float avgmarks = avg(st);
-    int ans = func(st);
+    float avgmarks = avg(student);
+    int ans = func(student);
     printf("Average marks : %.2f\n", avgmarks);
     if (ans == 1)
     {
-        printf("Status : passed\n", ans);
+        printf("Status : passed\n");
     }
     else
-        printf("Status : failed\n", ans);
+        printf("Status : failed\n");
 
     return 0;
 }
